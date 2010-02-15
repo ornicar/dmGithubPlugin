@@ -1,0 +1,9 @@
+dmWidgetGithub:
+
+  listIssues:
+    cache:              false
+    public_name:        List issues
+
+  listCommits:
+    cache:              false
+    public_name:        List commits
