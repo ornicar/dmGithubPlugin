@@ -11,7 +11,7 @@ foreach($issues as $issue)
   echo _tag('li',
 
     // link to the issue page on github
-    _link('http://github.com/'.$user.'/'.$repo.'/'.$state.'#issue/'.$issue['number'])
+    _link('http://github.com/'.$user.'/'.$repo.'/issues/'.$state.'#issue/'.$issue['number'])
     ->text($issue['title'])
     ->set('.issue_title').
 
