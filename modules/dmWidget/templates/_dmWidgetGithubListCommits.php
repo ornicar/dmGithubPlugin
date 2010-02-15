@@ -10,7 +10,7 @@ foreach($commits as $commit)
 {
   echo _tag('li',
 
-    // link to the user page on twitter
+    // link to the commit page on github
     _link($commit['url'])
     ->text(auto_link_text(escape($commit['message'])))
     ->set('.commit_title').
