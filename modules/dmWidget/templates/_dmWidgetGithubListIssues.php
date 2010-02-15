@@ -19,7 +19,7 @@ foreach($issues as $issue)
     format_date($issue['created_at'], 'd/MM H:mm').
 
     // link to the issue user on github
-    _link('http://github.com/'.$user)->text(escape($issue['user'])).
+    _link('http://github.com/'.$issue['user'])->text(escape($issue['user'])).
 
     // render issue text
     _tag('p.issue_text', auto_link_text(escape($issue['body'])))
