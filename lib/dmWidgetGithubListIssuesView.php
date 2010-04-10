@@ -42,9 +42,9 @@ class dmWidgetGithubListIssuesView extends dmWidgetPluginView
     }
     else
     {
-      $api = new phpGitHubApi();
+      $github = new phpGitHubApi();
 
-      $issues = array_slice($api->listIssues($user, $repo, $state), 0, $nb);
+      $issues = array_slice($github->getIssueApi()->getList($user, $repo, $state), 0, $nb);
 
       $issues = $this->context->getEventDispatcher()->filter(
         new sfEvent($this, 'dm.widget_github.list_issues', array(

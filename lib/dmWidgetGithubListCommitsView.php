@@ -42,9 +42,9 @@ class dmWidgetGithubListCommitsView extends dmWidgetPluginView
     }
     else
     {
-      $api = new phpGitHubApi();
+      $github = new phpGitHubApi();
 
-      $commits = array_slice($api->listBranchCommits($user, $repo, $branch), 0, $nb);
+      $commits = array_slice($github->getCommitApi()->getBranchCommits($user, $repo, $branch), 0, $nb);
 
       $commits = $this->context->getEventDispatcher()->filter(
         new sfEvent($this, 'dm.widget_github.list_commits', array(
