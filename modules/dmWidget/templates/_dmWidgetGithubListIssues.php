@@ -8,12 +8,21 @@ echo _open('ul');
 
 foreach($issues as $issue)
 {
+  // link to the issue page on github
+  if($state == 'open')
+  {
+    $issueLink = _link('http://github.com/'.$user.'/'.$repo.'/issues#issue/'.$issue['number']);
+  }
+  else
+  {
+    $issueLink = _link('http://github.com/'.$user.'/'.$repo.'/issues/'.$state.'#issue/'.$issue['number']);
+  }
+  $issueLink->text($issue['title'])
+    ->set('.issue_title');
+
   echo _tag('li',
 
-    // link to the issue page on github
-    _link('http://github.com/'.$user.'/'.$repo.'/issues/'.$state.'#issue/'.$issue['number'])
-    ->text($issue['title'])
-    ->set('.issue_title').
+    $issueLink.
 
     // render issue date
     format_date($issue['created_at'], 'd/MM H:mm').
