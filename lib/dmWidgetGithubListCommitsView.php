@@ -21,7 +21,7 @@ class dmWidgetGithubListCommitsView extends dmWidgetPluginView
   
   protected function doRenderForIndex()
   {
-    $vars    = $this->compiledVars;
+    $vars    = $this->filterViewVars($this->compiledVars);
     $commits = array();
     
     foreach($vars['commits'] as $commit)
