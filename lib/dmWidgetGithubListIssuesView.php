@@ -21,9 +21,10 @@ class dmWidgetGithubListIssuesView extends dmWidgetPluginView
   
   protected function doRenderForIndex()
   {
+    $vars   = $this->compiledVars;
     $issues = array();
     
-    foreach($this->compiledVars['issues'] as $issue)
+    foreach($vars['issues'] as $issue)
     {
       $issues[] = $issue['title'].' '.$issue['user'].' '.$issue['body'];
     }
