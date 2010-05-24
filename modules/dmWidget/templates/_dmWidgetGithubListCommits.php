@@ -16,7 +16,7 @@ foreach($commits as $commit)
     ->set('.commit_title').
 
     // render commit date
-    _tag(format_date($commit['committed_date'], 'd/MM H:mm')).
+    _tag('p.commit_date', format_date($commit['committed_date'], 'd/MM H:mm')).
 
     // render commit author name
     _tag('p.commit_user_name', escape($commit['author']['name']))
